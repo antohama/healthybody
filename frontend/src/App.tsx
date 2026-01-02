@@ -1,6 +1,6 @@
-import logo from './assets/logo.svg'
-import appname from './assets/appname.svg'
-import './App.css'
+import logo from './assets/logo.svg';
+import appname from './assets/appname.svg';
+import './App.css';
 
 function App() {
   return (
@@ -15,11 +15,12 @@ function App() {
       </div>
       <div className="card">
         <h2 className="main-text">
-          Your personal nutrition coaching companion for tracking progress, building custom meal plans, and achieving lasting weight loss results.
+          Your personal nutrition coaching companion for tracking progress, building custom meal
+          plans, and achieving lasting weight loss results.
         </h2>
       </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
