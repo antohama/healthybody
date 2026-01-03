@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeAll, afterAll } from 'vitest';
-import { buildApp } from '../src/app';
+import { buildApp } from '../../src/app';
 
 describe('POST /weight', () => {
   let app: ReturnType<typeof buildApp>;
