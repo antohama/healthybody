@@ -10,8 +10,8 @@ describe('add weight', () => {
     };
   });
 
-  it('defaults date to today', () => {
-    const res = addWeight(fakeRepo, {
+  it('defaults date to today', async () => {
+    const res = await addWeight(fakeRepo, {
       value: 80,
     });
 
@@ -27,6 +27,6 @@ describe('add weight', () => {
         value: 0,
         date: '2025-01-01',
       }),
-    ).toThrow();
+    ).rejects.toThrow();
   });
 });
