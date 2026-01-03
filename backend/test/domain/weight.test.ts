@@ -1,9 +1,17 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, beforeAll } from 'vitest';
 import { addWeight } from '../../src/domain/weight';
 
 describe('add weight', () => {
+  let fakeRepo: any;
+
+  beforeAll(() => {
+    fakeRepo = {
+      add: async () => {},
+    };
+  });
+
   it('defaults date to today', () => {
-    const res = addWeight({
+    const res = addWeight(fakeRepo, {
       value: 80,
     });
 
@@ -15,7 +23,7 @@ describe('add weight', () => {
 
   it('rejects non-positive value', () => {
     expect(() =>
-      addWeight({
+      addWeight(fakeRepo, {
         value: 0,
         date: '2025-01-01',
       }),

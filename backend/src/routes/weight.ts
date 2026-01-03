@@ -1,5 +1,8 @@
 import { FastifyInstance } from 'fastify';
 import { addWeight } from '../domain/weight';
+import { InMemoryWeightRepository } from '../infra/inMemoryWeightRepository';
+
+const repo = new InMemoryWeightRepository();
 
 const weightSchema = {
   body: {
@@ -17,8 +20,7 @@ export default async function weightRoutes(app: FastifyInstance) {
     '/weight',
     { schema: weightSchema },
     async (req) => {
-      console.log(JSON.stringify(req.body));
-      return addWeight(req.body);
+      return addWeight(repo, req.body);
     },
   );
 }
