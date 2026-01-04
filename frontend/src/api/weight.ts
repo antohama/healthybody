@@ -5,7 +5,7 @@ export type WeightDto = {
   date?: string;
 };
 
-export async function addWeight(input: { value: number; date?: string }): Promise<WeightDto> {
+export async function addWeight(input: WeightDto): Promise<WeightDto> {
   return http<WeightDto>('/weight', {
     method: 'POST',
     body: JSON.stringify(input),
