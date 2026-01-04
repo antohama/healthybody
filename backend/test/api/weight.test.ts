@@ -23,7 +23,7 @@ describe('POST /weight', () => {
       },
     });
 
-    expect(res.statusCode).toBe(200);
+    expect(res.statusCode).toBe(201);
     expect(res.json()).toEqual({
       value: 85.3,
       date: '2026-01-01',
@@ -39,7 +39,7 @@ describe('POST /weight', () => {
       },
     });
 
-    expect(res.statusCode).toBe(200);
+    expect(res.statusCode).toBe(201);
     expect(res.json()).toEqual({
       value: 34,
       date: new Date().toISOString().slice(0, 10),
@@ -57,6 +57,7 @@ describe('POST /weight', () => {
     });
 
     expect(res.statusCode).toBe(400);
+    expect(res.json().error.code).toBe('INVALID_INPUT');
   });
 
   it('returns error status when value is ommitted', async () => {
@@ -67,6 +68,7 @@ describe('POST /weight', () => {
     });
 
     expect(res.statusCode).toBe(400);
+    expect(res.json().error.code).toBe('INVALID_INPUT');
   });
 
   it('returns error status when value is negative', async () => {
@@ -80,6 +82,7 @@ describe('POST /weight', () => {
     });
 
     expect(res.statusCode).toBe(400);
+    expect(res.json().error.code).toBe('INVALID_INPUT');
   });
 
   it('returns error status when value is zero', async () => {
@@ -93,6 +96,7 @@ describe('POST /weight', () => {
     });
 
     expect(res.statusCode).toBe(400);
+    expect(res.json().error.code).toBe('INVALID_INPUT');
   });
 
   it('returns error status when value is non-numeric', async () => {
@@ -106,6 +110,7 @@ describe('POST /weight', () => {
     });
 
     expect(res.statusCode).toBe(400);
+    expect(res.json().error.code).toBe('INVALID_INPUT');
   });
 
   it('returns error status when value is null', async () => {
@@ -119,5 +124,6 @@ describe('POST /weight', () => {
     });
 
     expect(res.statusCode).toBe(400);
+    expect(res.json().error.code).toBe('INVALID_INPUT');
   });
 });

@@ -1,5 +1,6 @@
 import { describe, it, expect, beforeAll } from 'vitest';
 import { addWeight } from '../../src/domain/weight';
+import { InvalidWeightError } from '../../src/domain/errors';
 
 describe('add weight', () => {
   let fakeRepo: any;
@@ -27,6 +28,6 @@ describe('add weight', () => {
         value: 0,
         date: '2025-01-01',
       }),
-    ).rejects.toThrow();
+    ).rejects.toThrow(InvalidWeightError);
   });
 });

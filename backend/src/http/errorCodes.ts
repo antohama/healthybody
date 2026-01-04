@@ -1,0 +1,4 @@
+export enum ApiErrorCodes {
+  INVALID_INPUT = 'INVALID_INPUT',
+  INTERNAL_ERROR = 'INTERNAL_ERROR',
+}

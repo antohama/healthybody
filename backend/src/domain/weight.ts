@@ -1,3 +1,5 @@
+import { InvalidWeightError } from './errors';
+
 export type WeightEntry = {
   value: number;
   date?: string;
@@ -7,7 +9,7 @@ export async function addWeight(
   repo: { add: (entry: WeightEntry) => Promise<void> },
   input: WeightEntry,
 ): Promise<WeightEntry> {
-  if (input.value <= 0) throw new Error('Weight must be positive');
+  if (input.value <= 0) throw new InvalidWeightError();
 
   const entry: WeightEntry = {
     value: input.value,
