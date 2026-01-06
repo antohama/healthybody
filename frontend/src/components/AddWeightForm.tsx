@@ -22,7 +22,7 @@ export function AddWeightForm() {
       </button>
 
       {status === 'success' && <p>Saved</p>}
-      {status === 'error' && <p>Error</p>}
+      {status === 'error' && <p role="alert">Error</p>}
     </div>
   );
 }

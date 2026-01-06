@@ -1,6 +1,7 @@
 import logo from './assets/logo.svg';
 import appname from './assets/appname.svg';
 import './App.css';
+import { AddWeightForm } from './components/AddWeightForm';
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
           Your personal nutrition coaching companion for tracking progress, building custom meal
           plans, and achieving lasting weight loss results.
         </h2>
+
+        <AddWeightForm />
       </div>
     </>
   );

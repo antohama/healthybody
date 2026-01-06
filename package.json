@@ -9,7 +9,7 @@
   "scripts": {
     "dev:backend": "npm run dev -workspace backend",
     "test": "npm run test --workspaces",
-    "test:e2e": "npx playwright test",
+    "test:e2e": "playwright test",
     "lint": "npm run lint --workspaces",
     "build": "npm run build --workspaces",
     "format": "prettier --write \"./**/*.{ts,tsx,js,jsx,json,md}\" --ignore-path .prettierignore",
